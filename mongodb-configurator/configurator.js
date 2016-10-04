@@ -64,7 +64,7 @@ app.set('env', options.nodeEnvironment.toLowerCase());
 var server = http.createServer(app);
 
 // Add Express.js middleware & routes
-app.use(bodyParser.json());
+app.use(bodyParser.json({ limit: '50mb' }));
 app.use('/', routes);
 
 // Catch 404 and forward to error handler
